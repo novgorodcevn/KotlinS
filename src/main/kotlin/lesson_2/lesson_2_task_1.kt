@@ -7,6 +7,6 @@ fun main() {
     val studentScores4 = 5.0
     val countStudents = 4
 
-    var averageValueFormula = (studentScores1 + studentScores2 + studentScores3 + studentScores4) / countStudents
-    println(averageValueFormula)
+    val averageValue = (studentScores1 + studentScores2 + studentScores3 + studentScores4) / countStudents
+    println(averageValue)
 }
