@@ -10,9 +10,3 @@ fun main() {
   //  val resultTime = String.format("%02d:%02d:%02d", time, minutes, seconds)
     println("%02d:%02d:%02d".format(time, minutes, seconds))
 }
-
-
-
-
-
-
