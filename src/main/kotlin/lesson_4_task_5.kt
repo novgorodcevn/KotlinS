@@ -7,14 +7,13 @@ fun main() {
     val boxProvisions = readln().toInt()
     print("Благоприятность метеоусловий (true/false): ")
     val weather = readln().toBoolean()
-
     val settingSail =
-        (!damage && countCrew in MIN_CREW..MAX_CREW && boxProvisions > MAX_PROVISIONS && (weather == FAVORABLE || weather == UNFAVORABLE))
-                || (damage && countCrew == MAX_CREW && weather == FAVORABLE && boxProvisions >= MAX_PROVISIONS)
+        (damage !== YES_DAMAGE && countCrew in MIN_CREW..MAX_CREW && boxProvisions > MAX_PROVISIONS && (weather == FAVORABLE || weather == UNFAVORABLE))
+                || (damage == YES_DAMAGE && countCrew == MAX_CREW && weather == FAVORABLE && boxProvisions >= MAX_PROVISIONS)
     println(settingSail)
-
 }
 
+const val YES_DAMAGE = true
 const val MIN_CREW = 55
 const val MAX_CREW = 70
 const val MAX_PROVISIONS = 50
