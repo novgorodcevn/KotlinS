@@ -1,3 +1,5 @@
+package lesson_2
+
 fun main() {
     val employeeSalaryExpenses = TOTAL_EMPLOYEES * EMPLOYEE_SALARY
     println(employeeSalaryExpenses)

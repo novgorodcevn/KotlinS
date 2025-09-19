@@ -12,5 +12,5 @@ fun main() {
     val compoundInterest = initialAmount.toDouble() * (countPeriods + (annualInterestRate / maxPercent) / countPeriods).pow(
         (countPeriods * years).toDouble()
     )
-    println("%.3f".format( compoundInterest))
+    println("%.3f".format(compoundInterest))
 }

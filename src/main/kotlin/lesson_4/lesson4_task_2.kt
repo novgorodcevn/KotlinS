@@ -1,3 +1,5 @@
+package lesson_4
+
 fun main() {
     var weight = 20
     var volume = 80
