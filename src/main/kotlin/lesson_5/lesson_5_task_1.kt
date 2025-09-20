@@ -1,15 +1,16 @@
 package lesson_5
 
 fun main() {
+    val randomValue1 = (0..30).random()
+    val randomValue2 = (0..30).random()
     println("Докажите что вы не бот")
-    print("Сложите два числа:2+2=")
-    val count = readln().toIntOrNull()
-    if (count == null) {
+    print("Сложите два числа:$randomValue1+$randomValue2=")
+    val userAnswer = readln().toIntOrNull()
+    if (userAnswer == null) {
         println("Вы ввели не число")
     }
-    val resultCount = when (count) {
-        4 -> "Добро рожаловать!"
-        else -> "Доступ запрещен"
+    val resultSum = randomValue1 + randomValue2
+    val resultMessage = if (resultSum == userAnswer) "Добро пожадовать!" else {
     }
-    println(resultCount)
+    println(resultMessage)
 }
