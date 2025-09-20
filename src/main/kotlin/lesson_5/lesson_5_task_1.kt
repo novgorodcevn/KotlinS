@@ -10,7 +10,7 @@ fun main() {
         println("Вы ввели не число")
     }
     val resultSum = randomValue1 + randomValue2
-    val resultMessage = if (resultSum == userAnswer) "Добро пожадовать!" else {
-    }
+    val resultMessage = if (resultSum == userAnswer) "Добро пожадовать!" else
+        "Доступ запрещен."
     println(resultMessage)
 }
