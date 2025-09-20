@@ -1,3 +1,5 @@
+package lesson_4
+
 fun main() {
     val isToday = 1
     val analysisGay = (isToday % 2 == 0)

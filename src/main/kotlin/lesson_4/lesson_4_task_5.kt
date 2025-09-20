@@ -1,3 +1,5 @@
+package lesson_4
+
 fun main() {
     print("Наличие повреждений корпуса (true/false): ")
     val damage = readln().toBoolean()
