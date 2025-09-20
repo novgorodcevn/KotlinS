@@ -7,10 +7,15 @@ fun main() {
     print("Сложите два числа:$randomValue1+$randomValue2=")
     val userAnswer = readln().toIntOrNull()
     if (userAnswer == null) {
+        return
+    } else {
         println("Вы ввели не число")
     }
     val resultSum = randomValue1 + randomValue2
-    val resultMessage = if (resultSum == userAnswer) "Добро пожадовать!" else
+    val resultMessage = if (resultSum == userAnswer) {
+        "Добро пожаловать!"
+    } else {
         "Доступ запрещен."
+    }
     println(resultMessage)
 }
