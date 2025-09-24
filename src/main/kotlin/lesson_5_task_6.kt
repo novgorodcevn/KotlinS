@@ -7,19 +7,19 @@ fun main() {
     print("Введите свой рост(в сантиметрах)")
     val userHeightCentimeters = readln().toDouble()
     val userHeightMeters = userHeightCentimeters / ONE_HUNDRED_CENTIMETERS
-    val formulaBMI = userWight / userHeightMeters.pow(2)
-    val changedFormat = "%.2f".format(formulaBMI)
+    val bmi = userWight / userHeightMeters.pow(2)
+    val formattedBmi = "%.2f".format(bmi)
 
-    val resultMessage = if (formulaBMI < 18.5) {
-        "$changedFormat:Недостаточная масса тела"
-    } else if (18.5 <= formulaBMI && formulaBMI < 25) {
-        "$changedFormat:Нормальная масса тела"
-    } else if (25 <= formulaBMI && formulaBMI < 30) {
-        "$changedFormat:Избыточная масса тела"
-    } else {
-        "Ожирение"
+    val resultMessage = when {
+        bmi < MINIMUM_BODY_WEIGHT -> "$formattedBmi:Недостаточная масса тела"
+        bmi < NORMAL_BODY_WEIGHT -> "$formattedBmi:Нормальная масса тела"
+        bmi < MAXIMUM_BODY_WEIGHT -> "$formattedBmi:Избыточная масса тела"
+        else -> "$formattedBmi:Ожирение"
     }
     println(resultMessage)
 }
 
+const val MINIMUM_BODY_WEIGHT = 18.5
+const val NORMAL_BODY_WEIGHT = 25
+const val MAXIMUM_BODY_WEIGHT = 30
 const val ONE_HUNDRED_CENTIMETERS = 100
