@@ -1,4 +1,4 @@
-package lesson_4
+package lesson_5
 
 fun main() {
     val correctNumber1 = (0..42).random()

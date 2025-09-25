@@ -1,3 +1,5 @@
+package lesson_5
+
 fun main() {
     val winningNumbers = List(LOTTERY_NUMBERS_COUNT) { (0..MAX_NUMBER).random() }
     val numbers = mutableListOf<Int>()

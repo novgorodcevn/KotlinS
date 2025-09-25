@@ -1,3 +1,5 @@
+package lesson_5
+
 fun main() {
     val marvinGreeting = """
     Внимание, пассажир. Моя обязанность, как обычно,

@@ -1,3 +1,5 @@
+package lesson_5
+
 import java.math.RoundingMode
 import java.math.BigDecimal
 

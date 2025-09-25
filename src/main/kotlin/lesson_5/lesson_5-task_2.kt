@@ -1,3 +1,5 @@
+package lesson_5
+
 fun main() {
     val userYear = readln().toInt()
     val userAge = CURRENT_YEAR - userYear
