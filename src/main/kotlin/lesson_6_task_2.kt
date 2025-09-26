@@ -1,12 +1,12 @@
+import java.lang.Thread.sleep
+
 fun main() {
     println("Начало отчета")
     print("Время в секундах:")
-    var userAnswer = readln().toInt()
-    val timeSecond = userAnswer
-
-    while (userAnswer > 0) {
-        userAnswer--
-        Thread.sleep(1000)
-    }
-    println("Прошло $timeSecond секунд")
+    val timer = readln().toLong()
+    val timeMilliseconds: Long = timer * ONE_SECOND
+    sleep(timeMilliseconds)
+    println("Прошло $timer секунд")
 }
+
+const val ONE_SECOND = 1000
