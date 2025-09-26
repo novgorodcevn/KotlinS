@@ -1,9 +1,11 @@
 fun main() {
     println("Начало отчета")
     print("Время в секундах:")
-    var userAnswer = readln().toInt()
-    while (userAnswer > 0) {
-        println("Осталось секунд:${userAnswer--}")
+    var secondsLeft = readln().toInt()
+
+    while (secondsLeft > 0) {
+        println("Осталось секунд:$secondsLeft")
+        secondsLeft--
         Thread.sleep(1000)
     }
     println("Время вышло")
