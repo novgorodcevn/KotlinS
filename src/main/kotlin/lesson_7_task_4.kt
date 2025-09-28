@@ -1,11 +1,13 @@
 fun main() {
 
     print("Введите секунды,для начало отчета:")
-    val userAnswer = readln().toInt()
+    val timerSeconds = readln().toInt()
 
-    for (i in userAnswer downTo 0) {
+    for (i in timerSeconds downTo 0) {
+        Thread.sleep(ONE_SECOND)
         println("До конца осталось $i секунд")
-        Thread.sleep(1000)
     }
     println("Время вышло")
 }
+
+const val ONE_SECOND: Long = 1000
