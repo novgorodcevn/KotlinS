@@ -1,5 +1,5 @@
 fun main() {
-    val rangeNumbers = 0..9
+    val rangeNumbers = '0'..'9'
     val rangeLetters = 'a'..'z'
     val rangeUppercaseLetters = 'A'..'Z'
     val generatedPassword = mutableListOf<Char>()
