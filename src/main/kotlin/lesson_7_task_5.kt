@@ -4,7 +4,7 @@ fun main() {
     val rangeUppercaseLetters = 'A'..'Z'
     val generatedPassword = mutableListOf<Char>()
     val unifiedSymbols =
-        mutableListOf(rangeNumbers,rangeLetters, rangeUppercaseLetters)
+        mutableListOf(rangeNumbers, rangeLetters, rangeUppercaseLetters)
 
     do {
         print("Для генерации пароля введите введите количесво символов(минимальная длинна $MINIMUM_PASSWORD_LENGTH):")
