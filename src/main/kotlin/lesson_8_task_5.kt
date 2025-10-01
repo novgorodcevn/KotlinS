@@ -8,7 +8,5 @@ fun main() {
         val userIngredients = readln()
         arrayOfIngredients[i] = userIngredients
     }
-    for (i in arrayOfIngredients){
-        print("$i,")
-    }
+    println(arrayOfIngredients.joinToString(","))
 }
