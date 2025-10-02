@@ -4,15 +4,13 @@ fun main() {
     println(ingredientsDish.joinToString(" "))
     print("Какой ингредиент вы хотите заменить:")
     val changeIngredient = readlnOrNull().toString()
-    val arrayUserIngredients = arrayOf(changeIngredient)
-    val comparisonResult = ingredientsDish.intersect(arrayUserIngredients.toSet()).size
-    if (comparisonResult == 0) {
-        println("Такого ингредиента в рецепте нет")
-    } else {
+    if (changeIngredient in ingredientsDish) {
         print("Какой ингредиент вы хотите добавить:")
         val newIngredient = readlnOrNull().toString()
         val changedIndex = ingredientsDish.indexOf(changeIngredient)
         ingredientsDish[changedIndex] = newIngredient
         println(ingredientsDish.joinToString(" "))
+    } else {
+        println("Такого ингредиента в рецепте нет")
     }
 }
