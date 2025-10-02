@@ -4,11 +4,9 @@ fun main() {
 
     print("Какой ингредиент вы хотите найти:")
     val userIngredients = readlnOrNull().toString()
-    val arrayUserIngredients = arrayOf(userIngredients)
-    val comparisonResult = ingredientsDish.intersect(arrayUserIngredients.toSet()).size
-    if (comparisonResult == 0) {
-        println("Такого ингредиента в рецепте нет")
-    } else {
+    if (userIngredients in ingredientsDish) {
         println("результат: $userIngredients")
+    } else {
+        println("Такого ингредиента в рецепте нет")
     }
 }
