@@ -3,8 +3,7 @@ fun main() {
     val rangeLetters = 'a'..'z'
     val rangeUppercaseLetters = 'A'..'Z'
     val generatedPassword = mutableListOf<Char>()
-    val unifiedSymbols =
-        mutableListOf(rangeNumbers, rangeLetters, rangeUppercaseLetters)
+    val allChars = rangeNumbers + rangeLetters + rangeUppercaseLetters
 
     do {
         print("Для генерации пароля введите введите количесво символов(минимальная длинна $MINIMUM_PASSWORD_LENGTH):")
@@ -15,14 +14,14 @@ fun main() {
             generatedPassword.add(rangeUppercaseLetters.random())
 
             for (i in 1..userPasswordLength - 3) {
-                val randomSymbol = unifiedSymbols.random()
-                generatedPassword.add(randomSymbol.random())
+                val randomSymbol = allChars.random()
+                generatedPassword.add(randomSymbol)
             }
+            generatedPassword.shuffle()
+            println(generatedPassword.joinToString(""))
         } else {
             println("Некоректное значение,попробуйте еще раз")
         }
-        generatedPassword.shuffle()
-        println(generatedPassword.joinToString(""))
     } while (userPasswordLength == null || userPasswordLength < MINIMUM_PASSWORD_LENGTH)
 }
 
