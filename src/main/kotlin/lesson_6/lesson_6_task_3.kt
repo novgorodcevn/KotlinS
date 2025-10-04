@@ -1,3 +1,5 @@
+package lesson_6
+
 fun main() {
     println("Начало отчета")
     print("Время в секундах:")

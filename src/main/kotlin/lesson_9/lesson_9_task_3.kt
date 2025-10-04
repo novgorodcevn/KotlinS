@@ -1,3 +1,5 @@
+package lesson_9
+
 fun main() {
     val amletProducts = listOf("яиц", "молока", "сливочного масла")
     val quantityProducts = listOf(2, 50, 15)

@@ -1,3 +1,5 @@
+package lesson_7
+
 fun main() {
     do {
         val smsCode = (1000..9999).random()

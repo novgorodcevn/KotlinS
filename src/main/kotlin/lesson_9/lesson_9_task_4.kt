@@ -1,3 +1,5 @@
+package lesson_9
+
 fun main() {
     println("Напишите ингредиенты через запятую и пробел")
     val userIngredients = readln().split(", ")

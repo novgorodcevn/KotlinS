@@ -1,3 +1,5 @@
+package lesson_6
+
 import java.lang.Thread.sleep
 
 fun main() {

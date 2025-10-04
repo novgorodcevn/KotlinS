@@ -1,3 +1,5 @@
+package lesson_9
+
 fun main() {
     val ingredientsDish = mutableListOf("помидор", "сыр", "лук")
     println("В рецепте есть базовые ингредиенты:$ingredientsDish")

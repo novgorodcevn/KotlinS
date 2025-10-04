@@ -1,3 +1,5 @@
+package lesson_8
+
 fun main() {
 
     val ingredientsDish = arrayOf("помидор", "сыр", "лук", "честнок", "морковь")

@@ -1,3 +1,5 @@
+package lesson_8
+
 fun main() {
     println("сколько ингедиентов вы хотите добавить?")
     val numberIngredients = readln().toInt()

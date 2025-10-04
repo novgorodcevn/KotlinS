@@ -1,3 +1,5 @@
+package lesson_9
+
 fun main() {
     println("Напишите по отдельности пять инредиентов")
     val ingredients = mutableListOf<String>()

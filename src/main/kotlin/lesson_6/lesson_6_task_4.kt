@@ -1,3 +1,5 @@
+package lesson_6
+
 fun main() {
     val correctNumber = (1..9).random()
     var attempt = 5

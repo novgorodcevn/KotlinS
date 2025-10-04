@@ -1,3 +1,5 @@
+package lesson_7
+
 fun main() {
     val rangeNumbers = '0'..'9'
     val rangeLetters = 'a'..'z'

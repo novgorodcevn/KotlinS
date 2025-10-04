@@ -1,3 +1,5 @@
+package lesson_6
+
 fun main() {
     println("Докажите что вы не бот")
     var attempt = 3
