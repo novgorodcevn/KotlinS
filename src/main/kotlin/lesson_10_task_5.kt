@@ -20,6 +20,7 @@ const val TOKEN_LENGTH = 32
 fun getToken(login: String, password: String, char: List<Char>): String {
     val generatedToken = mutableListOf<Char>()
     if (login == LOGIN && password == PASSWORD) {
+
         for (i in 1..TOKEN_LENGTH) {
             val randomSymbol = char.random()
             generatedToken.add(randomSymbol)
