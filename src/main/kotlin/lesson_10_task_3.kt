@@ -7,12 +7,12 @@ fun main() {
 }
 
 fun getPassword(symbol: CharRange, number: CharRange, length: Int) {
-    val password = ""
+    var password = ""
     for (i in 1..length) {
         if (i % 2 != 0) {
-            password + number.random()
+            password += number.random()
         } else {
-            password + symbol.random()
+            password += symbol.random()
         }
     }
     println(password)
