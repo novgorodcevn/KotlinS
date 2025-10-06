@@ -1,6 +1,6 @@
 fun main() {
     println("Введите логин и пароль по очереди:")
-    println("Пароль и логин должны содержать не менее 4 символов")
+    println("Пароль и логин должны содержать не менее $MINIMUM_NUMBER_OF_CHARACTERS символов")
     val userLogin = readln()
     val userPassword = readln()
     println(getCheckValidation(userLogin, userPassword))
