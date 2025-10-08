@@ -8,28 +8,25 @@ class User(
 )
 
 fun main() {
-
-    val Fedor = User(
-        1,
-        "fedor994",
-        "1234",
-        "fedor@gmail.com"
+    val fedor = User(
+        id = 1,
+        login = "fedor994",
+        password = "1234",
+        mail = "fedor@gmail.com"
     )
-
-    val Ivan = User(
-        2,
-        "ivan228",
-        "zxcv1234",
-        "vanya992@gmail.com"
+    val ivan = User(
+        id = 2,
+        login = "ivan228",
+        password = "zxcv1234",
+        mail = "vanya992@gmail.com"
     )
-
-    println(Fedor.id)
-    println(Fedor.login)
-    println(Fedor.password)
-    println(Fedor.mail)
+    println(fedor.id)
+    println(fedor.login)
+    println(fedor.password)
+    println(fedor.mail)
     println()
-    println(Ivan.id)
-    println(Ivan.login)
-    println(Ivan.password)
-    println(Ivan.mail)
+    println(ivan.id)
+    println(ivan.login)
+    println(ivan.password)
+    println(ivan.mail)
 }
