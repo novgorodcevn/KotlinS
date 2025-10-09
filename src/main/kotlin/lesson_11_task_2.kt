@@ -23,10 +23,9 @@ class User2(
     }
 
     fun changeThePassword() {
-        val currentPassword = password
         print("Введите текущий пароль:")
         val userCurrentPassword = readln()
-        if (currentPassword == userCurrentPassword) {
+        if (password == userCurrentPassword) {
             println("Введите новый пароль")
             val userNewPassword = readln()
             password = userNewPassword
