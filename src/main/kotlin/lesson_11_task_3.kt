@@ -1,4 +1,5 @@
 class User(
+    val avatarUrl: String,
     var nickname: String,
     var status: String = listStatus[1],
 )
@@ -8,17 +9,15 @@ val listStatus = listOf("разговаривает", "микрофон выкл
 class Room(
     val cover: String,
     val title: String,
-    var listUsers: MutableList<User> = mutableListOf(),
+    var participants: MutableList<User> = mutableListOf(),
 ) {
-    fun addUsers(user: String) {
-        val newsUser = User(nickname = user)
-        listUsers.add(newsUser)
+    fun addUsers(user: User) {
+        participants.add(user)
     }
-
-
     fun updateStatus(name: String, status: String) {
-        if (listUsers.find { it.nickname == name } != null && status in listStatus) {
-            listUsers.find { it.nickname == name }?.status = status
+        val findUser = participants.find { it.nickname == name }
+        if (findUser != null && status in listStatus) {
+            findUser.status = status
         } else {
             println("Такого статуса нет или пользователя")
         }
@@ -29,14 +28,27 @@ fun main() {
     val room = Room(
         cover = "https://example.com/room_cover.jpg",
         title = "посиделки",
-        listUsers = mutableListOf(User(nickname = "Петр"), User(nickname = "Федор")),
+        participants = mutableListOf(
+            User(nickname = "Петр", avatarUrl = "https://example.com/петр.jpg"),
+            User(nickname = "Федор", avatarUrl = "https://example.com/федор.jpg")
+        ),
     )
-    room.addUsers("Дима")
-    room.addUsers("Илья")
-    room.updateStatus("Никита", listStatus[0])
-    room.listUsers.forEach { list ->
-        println(list.nickname)
-        println(list.status)
-    }
+    val newUser = User(
+        avatarUrl = "https://example.com/mark.jpg",
+        nickname = "Mark",
+        status = listStatus[2]
+    )
+    val newUser2 = User(
+        avatarUrl = "https://example.com/bob.jpg",
+        nickname = "Bob",
+        status = listStatus[0]
+    )
+    room.addUsers(newUser)
+    room.addUsers(newUser2)
+    room.updateStatus("Петр", listStatus[0])
 
+    room.participants.forEach { user ->
+        println(user.nickname)
+        println(user.status)
+    }
 }
