@@ -1,7 +1,7 @@
 class Forum(
-    var usersForum: MutableList<UserForum> = mutableListOf(),
-    var messagesForum: MutableList<MessageForum> = mutableListOf(),
-    var generationId: Int = 0,
+    private val usersForum: MutableList<UserForum> = mutableListOf(),
+    private val messagesForum: MutableList<MessageForum> = mutableListOf(),
+    private var generationId: Int = 0,
 ) {
 
     fun createNewUser(name: String): UserForum {
@@ -14,12 +14,12 @@ class Forum(
         return newUser
     }
 
-    fun createNewMessage(id: Int) {
+    fun createNewMessage(id: Int, message: String) {
         val author = usersForum.find { it.userId == id }
         if (author != null) {
             val newMessage = MessageForum(
                 authorId = id,
-                message = "привет мир",
+                message = message,
             )
             messagesForum.add(newMessage)
         }
@@ -27,10 +27,9 @@ class Forum(
     }
 
     fun printThread() {
-        for (i in 1..generationId) {
-            val author = usersForum.find { it.userId == i }
-            val message = messagesForum.find { it.authorId == i }
-            println("${author?.userName}:${message?.message}")
+        messagesForum.forEach { message ->
+            val author = usersForum.find { it.userId == message.authorId }?.userName
+            println("$author:${message.message}")
         }
     }
 }
@@ -49,7 +48,9 @@ fun main() {
     val forum = Forum()
     forum.createNewUser("Dima")
     forum.createNewUser("Ivan")
-    forum.createNewMessage(1)
-    forum.createNewMessage(2)
+    forum.createNewMessage(1, "Привет Ivan")
+    forum.createNewMessage(1, "Как дела?")
+    forum.createNewMessage(2, "Привет Dima")
+    forum.createNewMessage(2, "Хорошо спасибо")
     forum.printThread()
 }
