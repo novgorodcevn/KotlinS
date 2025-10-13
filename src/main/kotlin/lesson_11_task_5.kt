@@ -23,7 +23,6 @@ class Forum(
             )
             messagesForum.add(newMessage)
         }
-
     }
 
     fun printThread() {
