@@ -1,23 +1,25 @@
+val listStatus = listOf("разговаривает", "микрофон выключен", "пользователь заглушен")
+
 class User(
     val avatarUrl: String,
-    var nickname: String,
+    val nickname: String,
     var status: String = listStatus[1],
 )
-
-val listStatus = listOf("разговаривает", "микрофон выключен", "пользователь заглушен")
 
 class Room(
     val cover: String,
     val title: String,
-    var participants: MutableList<User> = mutableListOf(),
+    val participants: MutableList<User> = mutableListOf(),
 ) {
-    fun addUsers(user: User) {
+
+    fun addUser(user: User) {
         participants.add(user)
     }
+
     fun updateStatus(name: String, status: String) {
-        val findUser = participants.find { it.nickname == name }
-        if (findUser != null && status in listStatus) {
-            findUser.status = status
+        val user = participants.find { it.nickname == name }
+        if (user != null && status in listStatus) {
+            user.status = status
         } else {
             println("Такого статуса нет или пользователя")
         }
@@ -43,8 +45,8 @@ fun main() {
         nickname = "Bob",
         status = listStatus[0]
     )
-    room.addUsers(newUser)
-    room.addUsers(newUser2)
+    room.addUser(newUser)
+    room.addUser(newUser2)
     room.updateStatus("Петр", listStatus[0])
 
     room.participants.forEach { user ->
