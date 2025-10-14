@@ -3,7 +3,7 @@ class Category(
     val id: Int,
     val title: String,
     val description: String,
-    val recipes: MutableList<Recipe>
+    val recipes: List<Recipe>
 )
 
 class Recipe(
@@ -11,12 +11,19 @@ class Recipe(
     val imageUrl: String,
     val title: String,
     val description: String,
-    val ingredients: MutableList<Ingredient>
+    val ingredients: List<Ingredient>,
+    val titlePreparation: String,
+    val cookingSteps: List<CookingStep>,
+
 )
 
 class Ingredient(
     val id: Int,
     val name: String,
-    val amount: Int,
+    val amount: String,
     val unit: String,
+)
+
+class CookingStep(
+    val description: String,
 )
