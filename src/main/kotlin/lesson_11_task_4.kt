@@ -12,18 +12,12 @@ class Recipe(
     val title: String,
     val description: String,
     val ingredients: List<Ingredient>,
-    val titlePreparation: String,
-    val cookingSteps: List<CookingStep>,
-
-)
+    val cookingSteps: List<String>,
+    )
 
 class Ingredient(
     val id: Int,
     val name: String,
     val amount: String,
     val unit: String,
-)
-
-class CookingStep(
-    val description: String,
 )
