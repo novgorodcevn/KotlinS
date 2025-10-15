@@ -2,8 +2,8 @@ class Weather2(
     dayTimeKelvins: Int,
     nightKelvins: Int,
 ) {
-    val dayTimeCelsius = dayTimeKelvins - minTemperatureCelsius
-    val nightCelsius = nightKelvins - minTemperatureCelsius
+    val dayTimeCelsius = dayTimeKelvins - MIN_TEMPERATURE_CELSIUS
+    val nightCelsius = nightKelvins - MIN_TEMPERATURE_CELSIUS
 
     fun getWeather() {
         println("дневная температура=${"%.2f".format(dayTimeCelsius)}")
@@ -12,7 +12,7 @@ class Weather2(
     }
 }
 
-const val minTemperatureCelsius = 273.15
+const val MIN_TEMPERATURE_CELSIUS = 273.15
 
 fun main() {
 
