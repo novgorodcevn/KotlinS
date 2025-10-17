@@ -1,7 +1,7 @@
 class Guide3(
     val name: String,
     val phoneNumber: Long,
-    val company: String? = null,
+    var company: String? = null,
 ) {
     fun getContact() {
         println("Имя:$name\nНомер:$phoneNumber\nКомпания:$company")
@@ -24,8 +24,10 @@ fun main() {
             val contact = Guide3(
                 name = userName,
                 phoneNumber = userNumber,
-                company = userCompany
             )
+            if (userCompany != "") {
+                contact.company = userCompany
+            }
             contacts.add(contact)
         }
         println("Хотите ввести еще контакт?")
