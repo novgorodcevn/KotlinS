@@ -32,9 +32,3 @@ fun main() {
     )
    println(contacts.mapNotNull { it.company })
 }
-
-
-
-
-
-
