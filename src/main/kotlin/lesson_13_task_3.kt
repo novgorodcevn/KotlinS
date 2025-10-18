@@ -30,10 +30,11 @@ fun main() {
             company = "MTS"
         ),
     )
-
-    contacts.forEach { contact ->
-        if (contact.company != null && contact.company != "null") {
-            println(contact.company)
-        }
-    }
+   println(contacts.mapNotNull { it.company })
 }
+
+
+
+
+
+
