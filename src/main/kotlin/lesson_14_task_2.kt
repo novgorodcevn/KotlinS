@@ -1,7 +1,7 @@
 open class Liner2(
-    val name: String = "Лайнер",
-    val speed: Int = 56,
-    val capacity: Int = 2695,
+    open val name: String = "Лайнер",
+    open val speed: Int = 56,
+    open val capacity: Int = 2695,
 ) {
     open fun startLoading() {
         println("выдвигает горизонтальный трап со шкафута")
