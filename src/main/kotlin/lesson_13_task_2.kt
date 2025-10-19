@@ -1,10 +1,10 @@
 class Guide2(
     val name: String,
     val phoneNumber: Long,
-    var company: String? = null,
+    val company: String? = null,
 ) {
     fun getContact() {
-        println("Имя:$name\nНомер:$phoneNumber\nКомпания:$company")
+        println("Имя:$name\nНомер:$phoneNumber\nКомпания:${company ?: "<не указано>"}")
     }
 }
 
@@ -12,10 +12,6 @@ fun main() {
     val contact = Guide2(
         name = "Bob",
         phoneNumber = 8923464578,
-        company = "ssa"
         )
-    if (contact.company == null){
-        contact.company ="<не указано>"
-    }
     contact.getContact()
 }
