@@ -12,20 +12,21 @@ interface Floating {
     }
 }
 
-class Bird() : Flying, Floating
+class Seagull() : Flying, Floating
 
-class Fish() : Floating
+class Duck() : Floating
+
+class CrucianCarp() : Floating
 
 fun main() {
 
-    val crucianCarp = Fish()
-    crucianCarp.toSwim()
-
-    val seagull = Bird()
+    val seagull = Seagull()
     seagull.toSwim()
     seagull.toFly()
 
-    val duck = Bird()
+    val duck = Duck()
     duck.toSwim()
-    duck.toFly()
+
+    val crucianCarp = CrucianCarp()
+    crucianCarp.toSwim()
 }
