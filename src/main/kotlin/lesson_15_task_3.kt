@@ -1,37 +1,24 @@
 abstract class User(
     val name: String,
+) {
+    fun readForum() {
+        println("Пользователь $name читает форум")
+    }
 
-){
-    abstract fun readForum()
-    abstract fun writeMessage(text: String)
+    fun writeMessage(text: String) {
+        println("Пользователь $name написал сообщение:$text")
+    }
 }
 
-class AverageUser(name: String,
-    ):User(name){
-    override fun readForum() {
-       println("Пользователь $name читает форум")
-    }
+class AverageUser(name: String) : User(name)
 
-    override fun writeMessage(text: String) {
-       println("Пользователь $name написал сообщение:$text")
-    }
+class Administrator(name: String) : User(name) {
 
-}
-
-class Administrator(name: String,):User(name){
-    override fun readForum() {
-        println("Администратор $name читает форум")
-    }
-
-    override fun writeMessage(text: String) {
-        println("Администратор $name написал сообщение:$text")
-    }
-
-    fun deleteUser(user:AverageUser) {
+    fun deleteUser(user: User) {
         println("Администратор $name удолил пользователя ${user.name}")
     }
 
-    fun deleteMessage(user:AverageUser) {
+    fun deleteMessage(user: AverageUser) {
         println("Администратор $name удолил собщение пользователя: ${user.name}")
     }
 }
