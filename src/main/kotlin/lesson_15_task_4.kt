@@ -3,7 +3,7 @@ abstract class Product(
     val quantity: Int,
 )
 
-interface SearchСomponents {
+interface SearchComponents {
 
     fun startSearch() {
         println("Выполняется поиск")
@@ -13,7 +13,7 @@ interface SearchСomponents {
 class Tool(
     title: String,
     quantity: Int
-) : Product(title, quantity), SearchСomponents
+) : Product(title, quantity), SearchComponents
 
 class Accessories(
     title: String,
