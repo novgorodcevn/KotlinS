@@ -1,5 +1,5 @@
 abstract class WeatherStationStats {
-    abstract fun getWeatherStation()
+    open fun getWeatherStation() {}
 }
 
 class Temperature(val temperature: Int) : WeatherStationStats(
@@ -13,18 +13,15 @@ class PrecipitationAmount(val precipitation: Int) : WeatherStationStats() {
     override fun getWeatherStation() {
         println("Погодные условия:количество осадков $precipitation")
     }
-
 }
 
 class WeatherServer {
     fun sendToServer(server: WeatherStationStats) {
         print("на сервер отправлено:")
-        if (server is Temperature) {
-            println("${server.getWeatherStation()}")
-        } else if (server is PrecipitationAmount) {
-            println("${server.getWeatherStation()}")
-        }else{
-            print("неизвестный тип данных")
+        when (server) {
+            is Temperature -> println("Погодные условия:температура ${server.temperature}")
+            is PrecipitationAmount -> println("Погодные условия:количество осадков ${server.precipitation}")
+            else -> print("неизвестный тип данных")
         }
     }
 }
