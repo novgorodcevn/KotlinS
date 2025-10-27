@@ -1,19 +1,7 @@
-abstract class WeatherStationStats {
-    open fun getWeatherStation() {}
-}
+abstract class WeatherStationStats
+class Temperature(val temperature: Int) : WeatherStationStats()
 
-class Temperature(val temperature: Int) : WeatherStationStats(
-) {
-    override fun getWeatherStation() {
-        println("Погодные условия:температура $temperature")
-    }
-}
-
-class PrecipitationAmount(val precipitation: Int) : WeatherStationStats() {
-    override fun getWeatherStation() {
-        println("Погодные условия:количество осадков $precipitation")
-    }
-}
+class PrecipitationAmount(val precipitation: Int) : WeatherStationStats()
 
 class WeatherServer {
     fun sendToServer(server: WeatherStationStats) {
@@ -30,12 +18,10 @@ fun main() {
     val temperature = Temperature(
         temperature = 25
     )
-    temperature.getWeatherStation()
 
     val precipitation = PrecipitationAmount(
         precipitation = 15
     )
-    precipitation.getWeatherStation()
 
     val server = WeatherServer()
     server.sendToServer(server = temperature)
