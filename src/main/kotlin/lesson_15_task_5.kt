@@ -5,12 +5,12 @@ interface Movement {
 }
 
 interface PassengerTransportation {
-    val maxPassenger: Int
-    var currentPassenger: Int
+    val maxPassengers: Int
+    var currentPassengers: Int
 
     fun loadPassenger(count: Int) {
-        if (count <= maxPassenger) {
-            currentPassenger += count
+        if ((currentPassengers + count) <= maxPassengers) {
+            currentPassengers += count
             println("Загрузили $count пассажиров")
         } else {
             println("Мест для $count пассажиров нет")
@@ -18,10 +18,10 @@ interface PassengerTransportation {
     }
 
     fun unloadPassenger(count: Int) {
-        if (currentPassenger - count <= 0) {
+        if (currentPassengers - count >= 0) {
             println("Выгрузили $count пассажиров")
-            currentPassenger -= count
-            println("Осталось $currentPassenger пассажиров")
+            currentPassengers -= count
+            println("Осталось $currentPassengers пассажиров")
         }
     }
 }
@@ -31,7 +31,7 @@ interface CargoTransportation {
     var currentCargo: Int
 
     fun loadCargo(count: Int) {
-        if (count <= maxCargo) {
+        if ((currentCargo + count) <= maxCargo) {
             currentCargo += count
             println("Загрузили $count тонн груза")
         } else {
@@ -40,7 +40,7 @@ interface CargoTransportation {
     }
 
     fun unloadCargo(count: Int) {
-        if (currentCargo - count <= 0) {
+        if (currentCargo - count >= 0) {
             println("Выгрузили $count тонн груза")
             currentCargo -= count
             println("Осталось $currentCargo тонн груза")
@@ -49,16 +49,16 @@ interface CargoTransportation {
 }
 
 class CargoTruck : Movement, PassengerTransportation, CargoTransportation {
-    override val maxPassenger = 1
-    override var currentPassenger = 0
+    override val maxPassengers = 1
+    override var currentPassengers = 0
 
     override val maxCargo = 2
     override var currentCargo = 0
 }
 
 class PassengerCar : Movement, PassengerTransportation {
-    override val maxPassenger = 3
-    override var currentPassenger = 0
+    override val maxPassengers = 3
+    override var currentPassengers = 0
 }
 
 fun main() {
