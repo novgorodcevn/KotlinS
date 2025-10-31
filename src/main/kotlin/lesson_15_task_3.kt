@@ -1,10 +1,8 @@
 class User(
-    val login: String,
-    val password: String,
+    private val login: String,
+    private val password: String,
 ) {
-    private val correctPassword = "123456789"
-
-    fun verifyPassword() = password == correctPassword
+    fun verifyPassword(input: String) = password == input
 }
 
 fun main() {
@@ -12,5 +10,5 @@ fun main() {
         login = "Nikita",
         password = "123456789"
     )
-    println(user.verifyPassword())
+    println(user.verifyPassword("123456789"))
 }
