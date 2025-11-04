@@ -1,29 +1,24 @@
 class Folder(
     name: String,
     numberFiles: Int,
-    private val secrecy: Boolean,
+    private val isSecret: Boolean,
 ) {
-
-    private var numberFiles: Int = numberFiles
-        get() = if (secrecy == true) {
+    var numberFiles: Int = numberFiles
+        get() = if (isSecret) {
             0
         } else field
 
-    val name
-        get() = if (secrecy == true) {
-            println("Скрытая папка")
-            numberFiles = 0
-            println("Количество фалов:$numberFiles")
-        } else {
-            println("Количество фалов:$numberFiles")
-        }.toString()
+    var name: String = name
+        get() = if (isSecret) {
+            "Скрытая папка"
+        } else field
 }
 
 fun main() {
     val folder = Folder(
         name = "Отчетность",
         numberFiles = 11,
-        secrecy = false
+        isSecret = false
     )
     folder.name
 }
