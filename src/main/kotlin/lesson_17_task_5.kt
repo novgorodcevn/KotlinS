@@ -3,13 +3,12 @@ class User(
     private var _password: String,
 ) {
     var login: String = login
-        get() = field
         set(value) {
             field = value
             println("Логин успешно изменен")
         }
-    var password: String
-        get() = "*".repeat(_password.length)
+    var password: String = _password
+        get() = "*".repeat(field.length)
         set(value) {
             println("Вы не можете изменить пароль")
         }
