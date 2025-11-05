@@ -1,23 +1,23 @@
-class ProcessingPoint(
+class PostalParcel(
     private val packageNumber: Int,
-    private var _location: String,
+    initialLocation: String,
 ) {
     var movementCounter = 0
         private set
 
-    var location: String
-        get() = _location
+    var location: String = initialLocation
+        get() = field
         set(value) {
-            _location = value
+            field = value
             movementCounter++
         }
 }
 
 fun main() {
 
-    val point = ProcessingPoint(
+    val point = PostalParcel(
         packageNumber = 1,
-        _location = "Казань"
+        initialLocation = "Казань"
     )
 
     println(point.movementCounter)
