@@ -2,26 +2,17 @@ class User(
     login: String,
     private var _password: String,
 ) {
-    private fun hiddenPassword(): String {
-        var hiddenPassword = ""
-        for (i in 1.._password.length) {
-            hiddenPassword += "*"
-        }
-        return hiddenPassword
-    }
-
     var login: String = login
         get() = field
         set(value) {
             field = value
             println("Логин успешно изменен")
         }
-    var password: String = hiddenPassword()
-        get() = field
+    var password: String
+        get() = "*".repeat(_password.length)
         set(value) {
             println("Вы не можете изменить пароль")
         }
-
 }
 
 fun main() {
