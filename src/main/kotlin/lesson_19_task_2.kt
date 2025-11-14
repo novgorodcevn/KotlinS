@@ -15,7 +15,7 @@ class Product(
     val id: Int,
     val category: Category,
 ) {
-    fun  printInInfoProduct() {
+    fun printInInfoProduct() {
         println("Имя товара:$name\nНомер товара $id\nкатегория ${category.getCategoryName()}")
     }
 }
@@ -26,19 +26,19 @@ fun main() {
         id = 1,
         category = Category.CLOTHING
     )
-    product. printInInfoProduct()
+    product.printInInfoProduct()
     println()
     val product2 = Product(
         name = "карандаши",
         id = 2,
         category = Category.STATIONERY
     )
-    product2. printInInfoProduct()
+    product2.printInInfoProduct()
     println()
     val product3 = Product(
         name = "гантели",
         id = 3,
         category = Category.MISCELLANEOUS
     )
-    product3. printInInfoProduct()
+    product3.printInInfoProduct()
 }
