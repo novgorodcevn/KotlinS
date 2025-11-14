@@ -1,6 +1,6 @@
 fun main() {
-   val setFish = listOf(Fish.GUPPY, Fish.SIAMESE_FIGHTING_FISH, Fish.GOLDFISH, Fish.ANGELFISH)
-    for (i in setFish){
+
+    for (i in Fish.entries) {
         println(i.title)
     }
 }
