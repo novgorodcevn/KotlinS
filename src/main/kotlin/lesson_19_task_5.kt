@@ -17,7 +17,7 @@ fun main() {
     while (listPerson.size < 5) {
         println("Введите имя")
         val userName = readln()
-        if (userName == null) {
+        if (userName == "") {
             println("Вы ничего не ввели,попробуйте еще раз")
             continue
         }
@@ -29,7 +29,6 @@ fun main() {
         } else {
             println("Полл указан неверно")
             println("Попробуйте еще раз")
-            continue
         }
     }
     println("Список людей:")
