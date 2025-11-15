@@ -7,16 +7,11 @@ enum class Patron(val damage: Int) {
 class Tank {
     private var loadCartridge: Patron? = null
 
-    fun loadCartridge(patron: String) {
-        when {
-            patron.equals("синий", ignoreCase = true) -> loadCartridge = Patron.BLUE
-            patron.equals("зеленый", ignoreCase = true) -> loadCartridge = Patron.GREEN
-            patron.equals("красный", ignoreCase = true) -> loadCartridge = Patron.RED
-            else -> loadCartridge = null
-        }
+    fun loadCartridge(patron: Patron) {
+        loadCartridge = patron
     }
 
-    fun Shoot() {
+    fun shoot() {
         if (loadCartridge == null) {
             println("Снарядов нет")
         } else {
@@ -27,11 +22,11 @@ class Tank {
 
 fun main() {
     val tank = Tank()
-    tank.Shoot()
-    tank.loadCartridge("Синий")
-    tank.Shoot()
-    tank.loadCartridge("зеленый")
-    tank.Shoot()
-    tank.loadCartridge("красный")
-    tank.Shoot()
+    tank.shoot()
+    tank.loadCartridge(Patron.BLUE)
+    tank.shoot()
+    tank.loadCartridge(Patron.GREEN)
+    tank.shoot()
+    tank.loadCartridge(Patron.RED)
+    tank.shoot()
 }
