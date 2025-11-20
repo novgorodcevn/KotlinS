@@ -4,7 +4,7 @@ class Player(
     val maxHealth: Int = 100
 )
 
-fun Player.isHealthy() : Boolean {
+fun Player.isHealthy(): Boolean {
     return currentHealth == maxHealth
 }
 
