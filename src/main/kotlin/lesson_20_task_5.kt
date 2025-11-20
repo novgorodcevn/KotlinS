@@ -9,16 +9,15 @@ class Works {
         "Продуктивной работы",
         "Хорошего настроения",
     )
-    private var stringModifier: ((String) -> String)? = null
+    private var modifier: (String) -> String = { it }
 
     fun say() {
-        val phraseToProcess = listPhrases.random()
-        val finalPhrase = stringModifier?.invoke(phraseToProcess) ?: phraseToProcess
+        val finalPhrase = modifier(listPhrases.random())
         println(finalPhrase)
     }
 
     fun setModifier(modifier: (String) -> String) {
-        this.stringModifier = modifier
+        this.modifier = modifier
     }
 }
 
