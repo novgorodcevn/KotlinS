@@ -1,5 +1,5 @@
-fun Map<String, Int>.maxCategory(): String {
-    return this.maxBy { it.value }.key
+fun Map<String, Int>.maxCategory(): String? {
+    return this.maxByOrNull { it.value }?.key
 }
 
 fun main() {
