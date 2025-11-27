@@ -14,10 +14,8 @@ fun main() {
         eventDateTime = LocalDateTime.of(2024, 6, 1, 12, 0),
         distanceFromEarth = 4.37,
     )
-    val (name, description, eventDateTime, distance) = alphaCentauri
-
-    println("Название: $name")
-    println("Описание: $description")
-    println("Дата и время события: $eventDateTime")
-    println("Расстояние от Земли: $distance световых лет")
+    println("Название: ${alphaCentauri.component1()}")
+    println("Описание: ${alphaCentauri.component2()}")
+    println("Дата и время события: ${alphaCentauri.component3()}")
+    println("Расстояние от Земли: ${alphaCentauri.component4()}")
 }
